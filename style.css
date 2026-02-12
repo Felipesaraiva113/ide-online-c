@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.container { display: flex; flex-direction: column; height: 100vh; }
+
+header {
+    padding: 10px 20px;
+    background: #2d2d2d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#run-btn {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main { display: flex; flex: 1; }
+
+.editor-section { flex: 2; border-right: 2px solid #444; }
+
+.sidebar { flex: 1; display: flex; flex-direction: column; }
+
+.input-section, .output-section {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#stdin-input {
+    background: #252525;
+    color: #fff;
+    border: 1px solid #444;
+    flex: 1;
+    resize: none;
+    padding: 10px;
+    font-family: monospace;
+}
+
+.output-section { background: #121212; border-top: 2px solid #444; }
+
+.CodeMirror { height: 100% !important; }
+
+pre { color: #00ff00; margin-top: 10px; }
+ 
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.secondary-btn {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.secondary-btn:hover {
+    background-color: #666;
+}
+
+#run-btn {
+    background-color: #4caf50;
+    /* ... resto do código anterior ... */
+}
+/* Variáveis de Cores - Padrão Escuro */
+:root {
+    --bg-main: #1e1e1e;
+    --bg-header: #2d2d2d;
+    --bg-sidebar: #121212;
+    --text-color: #ffffff;
+    --border-color: #444;
+    --input-bg: #252525;
+}
+
+/* Variáveis - Modo Claro */
+body.light-mode {
+    --bg-main: #ffffff;
+    --bg-header: #f0f0f0;
+    --bg-sidebar: #e0e0e0;
+    --text-color: #1e1e1e;
+    --border-color: #ccc;
+    --input-bg: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-color);
+}
+
+header {
+    padding: 10px 20px;
+    background: var(--bg-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.secondary-btn {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main { display: flex; flex: 1; height: calc(100vh - 60px); }
+.editor-section { flex: 2; border-right: 2px solid var(--border-color); }
+.sidebar { flex: 1; display: flex; flex-direction: column; }
+
+.input-section, .output-section {
+    flex: 1;
+    padding: 15px;
+    background: var(--bg-sidebar);
+}
+
+#stdin-input {
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    flex: 1;
+    width: 100%;
+    resize: none;
+}
+
+/* Ajuste para o CodeMirror no modo claro */
+body.light-mode .CodeMirror {
+    filter: invert(0); /* Opcional: você pode mudar o tema do CodeMirror via JS */
+}
+
+/* ... (Mantenha as variáveis e estilos básicos anteriores) ... */
+
+/* Ajuste no Container Principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    flex-wrap: wrap; /* Permite que os botões pulem de linha se não couberem */
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Responsividade do Layout */
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: row; /* Lado a lado por padrão */
+    overflow: hidden;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+/* MEDIA QUERY PARA CELULARES E TABLETS */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Empilha o editor e o console */
+        overflow-y: auto; /* Permite rolar a página inteira no celular */
+    }
+
+    .editor-section {
+        flex: none;
+        height: 50vh; /* Editor ocupa metade da tela no celular */
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .sidebar {
+        flex: none;
+        height: auto;
+        min-width: 100%;
+    }
+
+    .input-section, .output-section {
+        height: 250px; /* Altura fixa para as caixas no mobile */
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .secondary-btn, #run-btn {
+        flex: 1; /* Botões crescem para ocupar o espaço no mobile */
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}

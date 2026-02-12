@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/dracula.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/c-programming.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>C Compiler</h1>
+            <div class="actions">
+                <button id="theme-btn" class="secondary-btn">Alternar Tema</button>
+                <input type="file" id="file-input" accept=".c,.txt" style="display: none;">
+                <button id="upload-btn" class="secondary-btn">Upload .c</button>
+                <button id="download-btn" class="secondary-btn">Download .c</button>
+                <button id="run-btn">Rodar Código</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="editor-section">
+                <textarea id="code-editor">#include <stdio.h>
+
+int main() {
+    int idade;
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    printf("Voce tem %d anos!\n", idade);
+    return 0;
+}</textarea>
+            </div>
+
+            <div class="sidebar">
+                <div class="input-section">
+                    <h3>Entrada (stdin):</h3>
+                    <textarea id="stdin-input" placeholder="Digite aqui os valores que o scanf vai ler (um por linha)"></textarea>
+                </div>
+                <div class="output-section">
+                    <h3>Console:</h3>
+                    <pre id="output">O resultado aparecerá aqui...</pre>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/clike/clike.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
