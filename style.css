@@ -49,9 +49,9 @@ main { display: flex; flex: 1; }
 
 .output-section { background: #121212; border-top: 2px solid #444; }
 
-.CodeMirror { height: 100% !important; }
+.CodeMirror { height: 100% !important; color: red;}
 
-pre { color: #00ff00; margin-top: 10px; }
+pre { color: red; margin-top: 10px; }
  
 .actions {
     display: flex;
