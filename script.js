@@ -51,7 +51,7 @@ runBtn.addEventListener("click", async () => {
     const inputData = stdinFrame.value;
     
     outputFrame.innerText = "Executando...";
-    outputFrame.style.color = "red";
+    outputFrame.style.color = "green";
 
     try {
         const response = await fetch("https://emkc.org/api/v2/piston/execute", {
