@@ -1,2 +1,1 @@
-Projeto desenvolvido para a disciplina Inovação Tecnológica e Empreendorismo do curso de DS no segundo ano.
-A proposta era gerar um site front end por meio do vibecoding.
+Projeto desenvolvido para a disciplina Inovação Tecnológica e Empreendorismo do curso de DS no segundo ano, o qual consiste no desenvolvimento de um ambiente de programação web para a Linguagem C, criado através da metodologia de Vibe Coding. O objetivo central foi explorar o uso estratégico de Inteligência Artificia para acelerar o ciclo de desenvolvimento. Diferencial: Demonstra agilidade na entrega de protótipos funcionais e adaptabilidade às novas tendências de desenvolvimento assistido por IA, focando em produtividade e resolução rápida de problemas técnicos.
